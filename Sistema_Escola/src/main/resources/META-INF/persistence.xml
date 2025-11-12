@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence xmlns="https://jakarta.ee/xml/ns/persistence"
+             version="3.0">
+    <persistence-unit name="sistemaescolarPU" transaction-type="RESOURCE_LOCAL">
+        <class>br.com.sistemaescolar.model.Aluno</class>
+        <class>br.com.sistemaescolar.model.Professor</class>
+        <class>br.com.sistemaescolar.model.Curso</class>
+        <class>br.com.sistemaescolar.model.Turma</class>
+        <class>br.com.sistemaescolar.model.Disciplina</class>
+
+        <properties>
+            <!-- Conexão com o banco -->
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/db_escola"/>
+            <property name="jakarta.persistence.jdbc.user" value="root"/>
+            <property name="jakarta.persistence.jdbc.password" value=""/>
+
+            <!-- Geração automática de tabelas -->
+            <property name="jakarta.persistence.schema-generation.database.action" value="create"/>
+            <property name="eclipselink.ddl-generation" value="create-or-extend-tables"/>
+            <property name="eclipselink.ddl-generation.output-mode" value="database"/>
+
+            <!-- Log detalhado (opcional) -->
+            <property name="eclipselink.logging.level" value="FINE"/>
+        </properties>
+    </persistence-unit>
+</persistence>
