@@ -20,8 +20,13 @@
             <property name="eclipselink.ddl-generation" value="create-or-extend-tables"/>
             <property name="eclipselink.ddl-generation.output-mode" value="database"/>
 
-            <!-- Log detalhado (opcional) -->
-            <property name="eclipselink.logging.level" value="FINE"/>
+            <!-- Desativar todos os logs do EclipseLink -->
+            <property name="eclipselink.logging.level" value="OFF"/>
+            <property name="eclipselink.logging.level.sql" value="OFF"/>
+            <property name="eclipselink.logging.level.transaction" value="OFF"/>
+            <property name="eclipselink.logging.level.connection" value="OFF"/>
+            <property name="eclipselink.logging.level.query" value="OFF"/>
+            <property name="eclipselink.logging.level.cache" value="OFF"/>
         </properties>
     </persistence-unit>
 </persistence>
