@@ -11,6 +11,10 @@ public class Aluno {
     private String nome;
     private String cpf;
 
+    @ManyToOne
+    @JoinColumn(name = "id")
+    private Turma turma;
+
     public Aluno() {}
 
     public Aluno(String nome, String cpf) {

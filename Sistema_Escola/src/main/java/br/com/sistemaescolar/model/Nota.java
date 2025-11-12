@@ -11,17 +11,19 @@ public class Nota{
     private double nota;
 
     @OneToOne
-    private Aluno id_aluno;
+    @JoinColumn(name = "id")
+    private Aluno aluno;
 
     @OneToOne
-    private Disciplina id_disciplina;
+    @JoinColumn(name = "id")
+    private Disciplina disciplina;
 
      public Nota () {}
 
-    public Nota(double nota, Aluno id_aluno, Disciplina id_disciplina) {
+    public Nota(double nota, Aluno aluno, Disciplina disciplina) {
         this.nota = nota;
-        this.id_aluno = id_aluno;
-        this.id_disciplina = id_disciplina;
+        this.aluno = aluno;
+        this.disciplina = disciplina;
     }
 
     public Long getId() {
@@ -37,18 +39,18 @@ public class Nota{
     }
 
     public Aluno getId_aluno() {
-        return id_aluno;
+        return aluno;
     }
 
     public void setId_aluno(Aluno id_aluno) {
-        this.id_aluno = id_aluno;
+        this.aluno = id_aluno;
     }
 
     public Disciplina getId_disciplina() {
-        return id_disciplina;
+        return disciplina;
     }
 
     public void setId_disciplina(Disciplina id_disciplina) {
-        this.id_disciplina = id_disciplina;
+        this.disciplina = id_disciplina;
     }
 }
