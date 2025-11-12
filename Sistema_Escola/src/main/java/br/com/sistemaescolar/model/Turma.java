@@ -13,6 +13,9 @@ public class Turma {
     @ManyToOne
     private Curso curso;
 
+    @OneToMany
+    private Aluno id_aluno;
+
     public Turma() {}
 
     public Turma(String nome, Curso curso) {
