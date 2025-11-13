@@ -30,12 +30,18 @@ public class AlunoController {
         System.out.println("Aluno removido!");
     }
 
-    public void exibirAluno(Long id) {
+    public Aluno exibirAluno(Long id) {
         Aluno aluno = alunoService.buscarAluno(id);
         if (aluno != null) {
             System.out.println("Aluno: " + aluno.getNome() + " | " + aluno.getCpf());
         } else {
             System.out.println("Aluno não encontrado.");
         }
+        return aluno;
     }
+
+    public Aluno buscarPorId(Long id) {
+        return alunoService.buscarAluno(id);
+    }
+
 }

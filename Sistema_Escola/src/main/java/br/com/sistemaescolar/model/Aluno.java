@@ -12,7 +12,7 @@ public class Aluno {
     private String cpf;
 
     @ManyToOne
-    @JoinColumn(name = "id")
+    @JoinColumn(name = "turma_id")
     private Turma turma;
 
     public Aluno() {}
@@ -25,16 +25,28 @@ public class Aluno {
     public Long getId() {
         return id;
     }
+
     public String getNome() {
         return nome;
     }
+
     public void setNome(String nome) {
         this.nome = nome;
     }
+
     public String getCpf() {
         return cpf;
     }
+
     public void setCpf(String cpf) {
         this.cpf = cpf;
+    }
+
+    public Turma getTurma() {
+        return turma;
+    }
+
+    public void setTurma(Turma turma) {
+        this.turma = turma;
     }
 }

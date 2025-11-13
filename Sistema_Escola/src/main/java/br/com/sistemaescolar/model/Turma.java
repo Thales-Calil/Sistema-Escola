@@ -2,6 +2,9 @@ package br.com.sistemaescolar.model;
 
 import jakarta.persistence.*;
 
+import java.util.ArrayList;
+import java.util.List;
+
 @Entity
 public class Turma {
     @Id
@@ -12,6 +15,9 @@ public class Turma {
 
     @ManyToOne
     private Curso curso;
+
+    @OneToMany(mappedBy = "turma", cascade = CascadeType.ALL)
+    private List<Aluno> alunos = new ArrayList<>();
 
     public Turma() {}
 
@@ -38,5 +44,13 @@ public class Turma {
 
     public void setCurso(Curso curso) {
         this.curso = curso;
+    }
+
+    public List<Aluno> getAlunos() {
+        return alunos;
+    }
+
+    public void setAlunos(List<Aluno> alunos) {
+        this.alunos = alunos;
     }
 }
