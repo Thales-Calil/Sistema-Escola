@@ -12,6 +12,7 @@ public class MainApp {
     private static final DisciplinaController disciplinaController = new DisciplinaController();
     private static final TurmaController turmaController = new TurmaController();
     private static final NotaController notaController = new NotaController();
+    private static final SalaController salaController = new SalaController();
 
     public static void main(String[] args) {
         while (true) {
@@ -22,6 +23,7 @@ public class MainApp {
             System.out.println("4. Disciplina");
             System.out.println("5. Turma");
             System.out.println("6. Nota");
+            System.out.println("7. Sala");
             System.out.println("0. Sair");
             System.out.print("Escolha uma opção: ");
             int opcao = Integer.parseInt(scanner.nextLine());
@@ -33,6 +35,7 @@ public class MainApp {
                 case 4 -> MenuDisciplina.exibirMenu(scanner, disciplinaController, professorController);
                 case 5 -> MenuTurma.exibirMenu(scanner, turmaController, cursoController);
                 case 6 -> MenuNota.exibirMenu(scanner, notaController, alunoController, disciplinaController);
+                case 7 -> MenuSala.exibirMenu(scanner, salaController);
                 case 0 -> {
                     System.out.println("Saindo...");
                     System.exit(0);

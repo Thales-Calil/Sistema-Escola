@@ -1,11 +1,14 @@
 package br.com.sistemaescolar.app;
 
+import br.com.sistemaescolar.controller.DisciplinaController;
 import br.com.sistemaescolar.controller.ProfessorController;
 import java.util.Scanner;
 
 public class MenuProfessor {
 
     public static void exibirMenu(Scanner scanner, ProfessorController professorController) {
+        DisciplinaController disciplinaController = new DisciplinaController();
+
         while (true) {
             System.out.println("\n--- Menu Professor ---");
             System.out.println("1. Criar professor");
@@ -23,7 +26,10 @@ public class MenuProfessor {
                     String cpf = scanner.nextLine();
                     System.out.print("Especialidade: ");
                     String esp = scanner.nextLine();
-                    professorController.criarProfessor(nome, cpf, esp);
+                    System.out.print("ID da Disciplina: ");
+                    Long disc = scanner.nextLong();
+                    scanner.nextLine();
+                    professorController.criarProfessor(nome, cpf, esp, disciplinaController.buscarPorId(disc));
                 }
                 case 2 -> {
                     System.out.print("ID do professor: ");
@@ -39,7 +45,10 @@ public class MenuProfessor {
                     String cpf = scanner.nextLine();
                     System.out.print("Nova especialidade: ");
                     String esp = scanner.nextLine();
-                    professorController.atualizarProfessor(id, nome, cpf, esp);
+                    System.out.print("ID da nova disciplina: ");
+                    Long disc = scanner.nextLong();
+                    scanner.nextLine();
+                    professorController.atualizarProfessor(id, nome, cpf, esp, disciplinaController.buscarPorId(disc));
                 }
                 case 4 -> {
                     System.out.print("ID do professor: ");

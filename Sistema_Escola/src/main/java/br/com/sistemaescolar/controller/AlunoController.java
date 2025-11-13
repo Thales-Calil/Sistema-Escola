@@ -1,14 +1,15 @@
 package br.com.sistemaescolar.controller;
 
 import br.com.sistemaescolar.model.Aluno;
+import br.com.sistemaescolar.model.Turma;
 import br.com.sistemaescolar.service.AlunoService;
 
 public class AlunoController {
 
     private final AlunoService alunoService = new AlunoService();
 
-    public void criarAluno(String nome, String cpf) {
-        Aluno aluno = new Aluno(nome, cpf);
+    public void criarAluno(String nome, String cpf, Turma turma) {
+        Aluno aluno = new Aluno(nome, cpf, turma);
         alunoService.salvarAluno(aluno);
         System.out.println("Aluno criado com ID: " + aluno.getId());
     }
@@ -33,7 +34,7 @@ public class AlunoController {
     public Aluno exibirAluno(Long id) {
         Aluno aluno = alunoService.buscarAluno(id);
         if (aluno != null) {
-            System.out.println("Aluno: " + aluno.getNome() + " | " + aluno.getCpf());
+            System.out.println("Aluno: " + aluno.getNome() + " | " + aluno.getCpf() + " | " + aluno.getTurma().getNome());
         } else {
             System.out.println("Aluno não encontrado.");
         }
@@ -43,5 +44,4 @@ public class AlunoController {
     public Aluno buscarPorId(Long id) {
         return alunoService.buscarAluno(id);
     }
-
 }

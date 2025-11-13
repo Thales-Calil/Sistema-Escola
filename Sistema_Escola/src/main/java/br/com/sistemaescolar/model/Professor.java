@@ -12,12 +12,16 @@ public class Professor {
     private String cpf;
     private String especialidade;
 
+    @ManyToOne
+    private Disciplina disciplina;
+
     public Professor() {}
 
-    public Professor(String nome, String cpf, String especialidade) {
+    public Professor(String nome, String cpf, String especialidade,  Disciplina disciplina) {
         this.nome = nome;
         this.cpf = cpf;
         this.especialidade = especialidade;
+        this.disciplina = disciplina;
     }
 
     public Long getId() {
@@ -46,5 +50,13 @@ public class Professor {
 
     public void setEspecialidade(String especialidade) {
         this.especialidade = especialidade;
+    }
+
+    public Disciplina getDisciplina() {
+        return disciplina;
+    }
+
+    public void setDisciplina(Disciplina disciplina) {
+        this.disciplina = disciplina;
     }
 }

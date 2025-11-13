@@ -19,11 +19,15 @@ public class Turma {
     @OneToMany(mappedBy = "turma", cascade = CascadeType.ALL)
     private List<Aluno> alunos = new ArrayList<>();
 
+    @ManyToOne
+    private Sala sala;
+
     public Turma() {}
 
-    public Turma(String nome, Curso curso) {
+    public Turma(String nome, Curso curso, Sala sala) {
         this.nome = nome;
         this.curso = curso;
+        this.sala = sala;
     }
 
     public Long getId() {
@@ -52,5 +56,13 @@ public class Turma {
 
     public void setAlunos(List<Aluno> alunos) {
         this.alunos = alunos;
+    }
+
+    public Sala getSala() {
+        return sala;
+    }
+
+    public void setSala(Sala sala) {
+        this.sala = sala;
     }
 }

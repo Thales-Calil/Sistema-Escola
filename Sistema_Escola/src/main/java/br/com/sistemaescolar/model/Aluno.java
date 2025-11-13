@@ -17,9 +17,10 @@ public class Aluno {
 
     public Aluno() {}
 
-    public Aluno(String nome, String cpf) {
+    public Aluno(String nome, String cpf, Turma turma) {
         this.nome = nome;
         this.cpf = cpf;
+        this.turma = turma;
     }
 
     public Long getId() {
