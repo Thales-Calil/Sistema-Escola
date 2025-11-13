@@ -41,4 +41,8 @@ public class DisciplinaController {
     public void removerDisciplina(Long id) {
         disciplinaService.deletarDisciplina(id);
     }
+
+    public Disciplina buscarPorId(Long id) {
+        return disciplinaService.buscarDisciplina(id);
+    }
 }

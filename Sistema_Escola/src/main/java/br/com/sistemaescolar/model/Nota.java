@@ -16,7 +16,7 @@ public class Nota{
     @ManyToOne
     private Disciplina disciplina;
 
-     public Nota () {}
+    public Nota () {}
 
     public Nota(double nota, Aluno aluno, Disciplina disciplina) {
         this.nota = nota;

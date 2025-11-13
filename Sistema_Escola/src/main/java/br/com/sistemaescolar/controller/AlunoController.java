@@ -38,4 +38,8 @@ public class AlunoController {
             System.out.println("Aluno não encontrado.");
         }
     }
+
+    public Aluno buscarPorId(Long id) {
+        return alunoService.buscarAluno(id);
+    }
 }

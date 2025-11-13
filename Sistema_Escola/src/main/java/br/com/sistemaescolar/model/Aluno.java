@@ -12,7 +12,6 @@ public class Aluno {
     private String cpf;
 
     @ManyToOne
-    @JoinColumn(name = "id")
     private Turma turma;
 
     public Aluno() {}

@@ -15,7 +15,7 @@ public class NotaController {
         notaService.salvarNota(notaAdd);
     }
 
-    public void exibirNotas(Long id) {
+    public void exibirNota(Long id) {
         Nota nota =  notaService.buscarNota(id);
         if (nota != null) {
             System.out.println("Aluno: " + nota.getId_aluno().getNome() + " | " +

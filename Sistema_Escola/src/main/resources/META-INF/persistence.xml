@@ -7,13 +7,15 @@
         <class>br.com.sistemaescolar.model.Curso</class>
         <class>br.com.sistemaescolar.model.Turma</class>
         <class>br.com.sistemaescolar.model.Disciplina</class>
+        <class>br.com.sistemaescolar.model.Sala</class>
+        <class>br.com.sistemaescolar.model.Nota</class>
 
         <properties>
             <!-- Conexão com o banco -->
             <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/db_escola"/>
             <property name="jakarta.persistence.jdbc.user" value="root"/>
-            <property name="jakarta.persistence.jdbc.password" value=""/>
+            <property name="jakarta.persistence.jdbc.password" value="1234"/>
 
             <!-- Geração automática de tabelas -->
             <property name="jakarta.persistence.schema-generation.database.action" value="create"/>
