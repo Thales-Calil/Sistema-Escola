@@ -12,26 +12,24 @@ public class DisciplinaController {
         this.disciplinaService = new DisciplinaService();
     }
 
-    public void criarDisciplina(String nome, Professor professor) {
-        Disciplina disciplina = new Disciplina(nome, professor);
+    public void criarDisciplina(String nome) {
+        Disciplina disciplina = new Disciplina(nome);
         disciplinaService.salvarDisciplina(disciplina);
     }
 
     public void exibirDisciplina(Long id) {
         Disciplina disciplina = disciplinaService.buscarDisciplina(id);
         if (disciplina != null) {
-            System.out.println("Disciplina: " + disciplina.getNome() +
-                    " | Professor: " + disciplina.getProfessor().getNome());
+            System.out.println("Disciplina: " + disciplina.getNome());
         } else {
             System.out.println("Disciplina não encontrada.");
         }
     }
 
-    public void atualizarDisciplina(Long id, String novoNome, Professor novoProfessor) {
+    public void atualizarDisciplina(Long id, String novoNome) {
         Disciplina disciplina = disciplinaService.buscarDisciplina(id);
         if (disciplina != null) {
             disciplina.setNome(novoNome);
-            disciplina.setProfessor(novoProfessor);
             disciplinaService.atualizarDisciplina(disciplina);
         } else {
             System.out.println("Disciplina não encontrada para atualização.");

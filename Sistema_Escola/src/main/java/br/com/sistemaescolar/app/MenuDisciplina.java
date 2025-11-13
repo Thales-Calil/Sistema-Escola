@@ -22,12 +22,7 @@ public class MenuDisciplina {
                 case 1 -> {
                     System.out.print("Nome da disciplina: ");
                     String nome = scanner.nextLine();
-                    System.out.print("ID do professor: ");
-                    Long idProf = Long.parseLong(scanner.nextLine());
-                    Professor professor = professorController.buscarPorId(idProf);
-                    if (professor != null) {
-                        disciplinaController.criarDisciplina(nome, professor);
-                    } else System.out.println("Professor não encontrado.");
+                    disciplinaController.criarDisciplina(nome);
                 }
                 case 2 -> {
                     System.out.print("ID da disciplina: ");
@@ -39,12 +34,7 @@ public class MenuDisciplina {
                     Long id = Long.parseLong(scanner.nextLine());
                     System.out.print("Novo nome: ");
                     String nome = scanner.nextLine();
-                    System.out.print("ID do novo professor: ");
-                    Long idProf = Long.parseLong(scanner.nextLine());
-                    Professor professor = professorController.buscarPorId(idProf);
-                    if (professor != null) {
-                        disciplinaController.atualizarDisciplina(id, nome, professor);
-                    } else System.out.println("Professor não encontrado.");
+                    disciplinaController.atualizarDisciplina(id, nome);
                 }
                 case 4 -> {
                     System.out.print("ID da disciplina: ");
