@@ -10,12 +10,10 @@ public class Nota{
 
     private double nota;
 
-    @OneToOne
-    @JoinColumn(name = "id")
+    @ManyToOne
     private Aluno aluno;
 
-    @OneToOne
-    @JoinColumn(name = "id")
+    @ManyToOne
     private Disciplina disciplina;
 
      public Nota () {}
@@ -28,6 +26,10 @@ public class Nota{
 
     public Long getId() {
         return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public double getNota() {

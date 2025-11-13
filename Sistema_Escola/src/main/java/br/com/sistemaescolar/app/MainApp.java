@@ -79,7 +79,15 @@ public class MainApp {
         alunoController.exibirAluno(2L);
         System.out.println("-------------------------------------------\n");
 
-        System.out.println("✏️ [6] Atualização de Dados");
+        System.out.println("🎓 [6] Cadastro de Salas");
+        alunoController.criarAluno("João Pereira", "11122233344");
+        alunoController.criarAluno("Maria Oliveira", "55566677788");
+
+        alunoController.exibirAluno(1L);
+        alunoController.exibirAluno(2L);
+        System.out.println("-------------------------------------------\n");
+
+        System.out.println("✏️ [7] Atualização de Dados");
         alunoController.atualizarAluno(1L, "João P. da Silva", "11122233344");
         professorController.atualizarProfessor(1L, "Carlos S. Lima", "12345678900", "Banco de Dados Avançado");
 
